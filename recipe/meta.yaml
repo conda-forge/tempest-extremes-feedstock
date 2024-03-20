@@ -1,6 +1,6 @@
 {% set name = "tempest-extremes" %}
-{% set version = "2.2.1" %}
-{% set build = 2 %}
+{% set version = "2.2.2" %}
+{% set build = 0 %}
 
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or 'nompi' %}
@@ -15,12 +15,11 @@ package:
 
 source:
   url: https://github.com/ClimateGlobalChange/tempestextremes/archive/v{{ version }}.tar.gz
-  sha256: bd3feeb187587d95a6fb94314eecd9c72c9349c6e1afac347edafe7b4d450a93
+  sha256: 7c4662ed1750a2e69049b358d37420946cac39a5ec78964259cff149008ac045
   patches:
     - 0001-Update-default.make-for-conda-forge.patch
     - 0002-Update-macosx.make-for-conda-forge.patch
     - 0003-Disable-MPI-build.patch  # [mpi == 'nompi']
-    - 0004-Remove-VERSION-causing-trouble-in-OSX-build.patch
 
 build:
   skip: true  # [win]
