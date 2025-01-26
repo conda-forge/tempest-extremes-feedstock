@@ -1,12 +1,29 @@
-diff -ruN tempestextremes-2.2.3/mk/system/macosx.make tempestextremes-2.2.3-patch/mk/system/macosx.make
---- tempestextremes-2.2.3/mk/system/macosx.make	2024-07-26 02:04:36.000000000 +0200
-+++ tempestextremes-2.2.3-patch/mk/system/macosx.make	2025-01-26 09:13:15.086087903 +0100
-@@ -6,13 +6,11 @@
+From 31cab5b75710240323a33d6280c41b155b7b2e87 Mon Sep 17 00:00:00 2001
+From: Xylar Asay-Davis <xylarstorm@gmail.com>
+Date: Tue, 17 Nov 2020 11:03:35 +0100
+Subject: [PATCH] Update macosx.make for conda-forge
+
+---
+ mk/system/macosx.make | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+diff --git a/mk/system/macosx.make b/mk/system/macosx.make
+index 4c9916e..20c95fb 100644
+--- a/mk/system/macosx.make
++++ b/mk/system/macosx.make
+@@ -1,18 +1,17 @@
+-# Copyright (c) 2020 Paul Ullrich 
++# Copyright (c) 2020 Paul Ullrich
+ #
+-# Distributed under the Boost Software License, Version 1.0. (See accompanying 
++# Distributed under the Boost Software License, Version 1.0. (See accompanying
+ # file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+ 
  # Mac OSX (Darwin)
  
  # C++ compiler without and with MPI
 -CXX=               g++
--MPICXX=            mpicxx
+ MPICXX=            mpicxx
  
  # Additional C++ command line flags
  
@@ -16,3 +33,6 @@ diff -ruN tempestextremes-2.2.3/mk/system/macosx.make tempestextremes-2.2.3-patc
  NETCDF_CXXFLAGS=   -I$(NETCDF_ROOT)/include
  NETCDF_LIBRARIES=  -lnetcdf -lnetcdf_c++
  NETCDF_LDFLAGS=    -L$(NETCDF_ROOT)/lib -Wl,-rpath,$(NETCDF_CXX_ROOT)/lib
+-- 
+2.29.1
+
