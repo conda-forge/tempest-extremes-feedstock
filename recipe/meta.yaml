@@ -45,6 +45,7 @@ build:
 
 requirements:
   build:
+    - {{ mpi }} # [mpi != 'nompi' and build_platform != target_platform]
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
     - make
