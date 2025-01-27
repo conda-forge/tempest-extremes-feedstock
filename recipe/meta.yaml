@@ -49,6 +49,7 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
     - make
+    - libnetcdf * {{ mpi_prefix }}_*
   host:
     - {{ mpi }}  # [mpi != 'nompi']
     # need to list libnetcdf twice to get version
