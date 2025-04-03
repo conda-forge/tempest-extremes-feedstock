@@ -16,10 +16,6 @@ package:
 source:
   url: https://github.com/ClimateGlobalChange/tempestextremes/archive/v{{ version }}.tar.gz
   sha256: eff3564a99b0711335bd4f08e3a7dcec401c56d58fe6ef2d1ae778d7f7bf04e0
-  patches:
-    - 0001-Update-default.make-for-conda-forge.patch
-    - 0002-Update-macosx.make-for-conda-forge.patch
-    - 0003-Disable-MPI-build.patch  # [mpi == 'nompi']
 
 build:
   skip: true  # [win]
