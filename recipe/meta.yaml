@@ -45,6 +45,7 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
     - make
+    - cmake
     - libnetcdf * {{ mpi_prefix }}_*  # [build_platform != target_platform]
   host:
     - {{ mpi }}  # [mpi != 'nompi']
