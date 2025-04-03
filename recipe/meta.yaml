@@ -1,6 +1,6 @@
 {% set name = "tempest-extremes" %}
-{% set version = "2.2.3" %}
-{% set build = 1 %}
+{% set version = "2.3.1" %}
+{% set build = 0 %}
 
 # recipe-lint fails if mpi is undefined
 {% set mpi = mpi or 'nompi' %}
@@ -15,11 +15,7 @@ package:
 
 source:
   url: https://github.com/ClimateGlobalChange/tempestextremes/archive/v{{ version }}.tar.gz
-  sha256: 35ca4dca46dc684030c2d250551ef781faaf88a564c74aee6ec3901722c8f6e1
-  patches:
-    - 0001-Update-default.make-for-conda-forge.patch
-    - 0002-Update-macosx.make-for-conda-forge.patch
-    - 0003-Disable-MPI-build.patch  # [mpi == 'nompi']
+  sha256: eff3564a99b0711335bd4f08e3a7dcec401c56d58fe6ef2d1ae778d7f7bf04e0
 
 build:
   skip: true  # [win]
@@ -49,6 +45,7 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
     - make
+    - cmake
     - libnetcdf * {{ mpi_prefix }}_*  # [build_platform != target_platform]
   host:
     - {{ mpi }}  # [mpi != 'nompi']
