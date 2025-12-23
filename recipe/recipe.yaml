@@ -48,8 +48,6 @@ requirements:
     - libnetcdf
     - libnetcdf * ${{ mpi_prefix }}_*
   run:
-    - if: mpi != "nompi"
-      then: ${{ mpi }}
     - libnetcdf * ${{ mpi_prefix }}_*
 
   run_exports:
