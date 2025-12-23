@@ -23,7 +23,6 @@ convective systems (MCSs). By considering multiple extremes within the same
 framework, we can study the joint characteristics of extremes while
 minimizing the total data burden.
 
-
 Current build status
 ====================
 
