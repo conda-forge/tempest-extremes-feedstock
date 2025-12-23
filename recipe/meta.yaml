@@ -1,5 +1,5 @@
 {% set name = "tempest-extremes" %}
-{% set version = "2.4" %}
+{% set version = "2.4.1" %}
 {% set build = 0 %}
 
 # recipe-lint fails if mpi is undefined
@@ -15,7 +15,7 @@ package:
 
 source:
   url: https://github.com/ClimateGlobalChange/tempestextremes/archive/v{{ version }}.tar.gz
-  sha256: c1be592ae5e1975c64f65025149d9c3f7b83474fcfe67ef3d5bb7206e63b4b6a
+  sha256: c586739a62e3a8d8cc41cd2f17130825806b8bd618df25e9ac26a0ce0bd72016
 
 build:
   skip: true  # [win]
