@@ -28,7 +28,7 @@ build:
   # `tempest-extremes * mpi_*` for any mpi
   # `tempest-extremes * nompi_*` for no mpi
 
-  string: ${{ mpi_prefix }}_h${{ PKG_HASH }}_${{ build_number }}
+  string: ${{ mpi_prefix }}_h${{ hash }}_${{ build_number }}
 
 requirements:
   build:
