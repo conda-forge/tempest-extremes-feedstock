@@ -2,11 +2,12 @@ schema_version: 1
 
 context:
   name: tempest-extremes
-  version: 2.4.1
+  version: "2.4.2"
   # recipe-lint failed in v0 if mpi was undefined; keep the same defaulting behavior
   mpi: ${{ mpi or "nompi" }}
+  build: 0
   # prioritize nompi via build number
-  build_number: ${{ 101 if mpi == "nompi" else 1 }}
+  build_number: ${{ build + 100 if mpi == "nompi" else build }}
   mpi_prefix: ${{ "mpi_" + mpi if mpi != "nompi" else "nompi" }}
 
 package:
@@ -15,7 +16,7 @@ package:
 
 source:
   url: https://github.com/ClimateGlobalChange/tempestextremes/archive/v${{ version }}.tar.gz
-  sha256: c586739a62e3a8d8cc41cd2f17130825806b8bd618df25e9ac26a0ce0bd72016
+  sha256: a370faadfe3958ed0db7bfab8ca0fcd50bbc91b11aeba3dff8728d0fb0f94267
 
 build:
   skip:
